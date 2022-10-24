@@ -14,6 +14,7 @@ def main():
     print(c)
     print(s)
 
+    print('\n\nВызов метода из сторонней библиотеки:')
     r = requests.get('https://api.github.com/events')
     print(r.encoding)
 
