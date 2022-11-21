@@ -16,36 +16,33 @@ class Unique(object):
 
     def __next__(self):
         # Нужно реализовать __next__
-        if self.ignore_case:
-            while True:
-                self.index += 1
-                if self.index >= len(self.data):
-                    raise StopIteration
+        while True:
+            self.index += 1
+            if self.index >= len(self.data):
+                raise StopIteration
+            if self.check():
                 current = self.data[self.index]
-                if type(current) == str:
-                    if not ((current.lower() in self.occured) or (current.upper() in self.occured)):
-                        self.occured.add(current)
-                        return current
-                else:
-                    if not (current in self.occured):
-                        self.occured.add(current)
-                        return current
-        else:
-            while True:
-                self.index += 1
-                if self.index >= len(self.data):
-                    raise StopIteration
-                current = self.data[self.index]
-                if not (current in self.occured):
-                    self.occured.add(current)
-                    return current
+                self.occured.add(current)
+                return current
         pass
 
     def __iter__(self):
         return self
 
+    def check(self):
+        el = self.data[self.index]
+        if self.ignore_case:
+            if type(el) == str:
+                return not((el.lower() in self.occured) or (el.upper() in self.occured))
+            else:
+                return not(el in self.occured)
+        else:
+            return not(el in self.occured)
+        pass
+
+
 # def main():
-#     for i in Unique(['a', 'A', 'b', 'B', 'a', 'A', 'b', 'B'], True):
+#     for i in Unique(['a', 'A', 'b', 'B', 'a', 'A', 'b', 'B']):
 #         print(i)
 
 # main()

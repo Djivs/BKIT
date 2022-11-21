@@ -4,6 +4,8 @@ import sys
 from lab_python_fp.print_result import print_result
 from lab_python_fp.gen_random import gen_random
 from lab_python_fp.cm_timer import cm_timer_1
+from lab_python_fp.unique import Unique
+from lab_python_fp.field import field
 
 path = 'lab/3-4/data_light.json'
 
@@ -12,7 +14,7 @@ with open(path) as f:
 
 @print_result
 def f1(arg):
-    return sorted(list(set([i['job-name'] for i in arg])), key=lambda x: x.lower())
+    return sorted(list(j for j in Unique(list(i for i in field(arg, 'job-name')))), key=lambda x: x.lower())
 
 
 @print_result
