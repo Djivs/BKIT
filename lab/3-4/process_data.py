@@ -1,0 +1,37 @@
+import json
+import sys
+
+from lab_python_fp.print_result import print_result
+from lab_python_fp.gen_random import gen_random
+from lab_python_fp.cm_timer import cm_timer_1
+
+path = 'lab/3-4/data_light.json'
+
+with open(path) as f:
+    data = json.load(f)
+
+@print_result
+def f1(arg):
+    return sorted(list(set([i['job-name'] for i in arg])), key=lambda x: x.lower())
+
+
+@print_result
+def f2(arg):
+    return list(filter(lambda s: (s.split())[0].lower() == 'программист', arg))
+
+
+@print_result
+def f3(arg):
+    return list(map(lambda lst: lst + ' с опытом Python', arg))
+
+
+@print_result
+def f4(arg):
+    return list(zip(arg, ['зарплата ' + str(i) + ' руб.' for i in gen_random(len(arg), 100000, 200000)]))
+
+
+def main():
+    with cm_timer_1():
+        f4(f3(f2(f1(data))))
+
+main()
