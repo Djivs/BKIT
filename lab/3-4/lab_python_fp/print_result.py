@@ -1,5 +1,3 @@
-# Здесь должна быть реализация декоратора
-
 def print_result(fun):
     def decorator(lst = [], *args, **kwargs):
         print(fun.__name__)

@@ -1,5 +1,4 @@
 def field(items, *args):
-    # Необходимо реализовать генератор 
     assert len(args) > 0
     if not(len(items)):
         return
