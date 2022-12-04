@@ -1,6 +1,6 @@
-Feature: function getEquationRoots should be able to solve biquadratic equation
-    In order to make sure the function
-    solves equation correctly I have the following
+Feature: Program should be able to solve biquadratic equation
+    In order to make sure the program
+    solves equations correctly I have the following
     test scenarios:
 
     Scenario Outline: Test my function
@@ -9,5 +9,10 @@ Feature: function getEquationRoots should be able to solve biquadratic equation
         Then I expect to get <N> roots
 
     Examples:
-        | A | B | C | D |
-        | 1 | 2 | 3 | 0 |
+        | A | B | C | N |
+        | 1 |   2 |  3 | 0 |
+        | 2 |   3 |  4 | 0 |
+        | 5 |   0 |  0 | 1 |
+        | 1 |   4 | -5 | 2 |
+        | 2 |  -5 |  3 | 4 |
+        | 1 | -25 |  0 | 3 |
