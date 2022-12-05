@@ -2,11 +2,11 @@ import telebot
 from telebot import types
 import pytz
 from datetime import datetime
-# Создаем экземпляр бота
+
+
 token = ''
 with open('token.txt', 'r') as f:
-    token=str(f.readline())
-
+    token=f.readline()
 bot = telebot.TeleBot(token)
 
 newYorkTz = pytz.timezone("America/New_York") 
@@ -22,7 +22,6 @@ timeInTokyo = datetime.now(tokyoTz)
 currentTimeInTokyo = timeInTokyo.strftime("%H:%M:%S")
 
 
-# Функция, обрабатывающая команду /start
 @bot.message_handler(commands=["start"])
 def start(m, res=False):
     markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -32,16 +31,17 @@ def start(m, res=False):
     markup.add(item1)
     markup.add(item2)
     markup.add(item3)
-
     bot.send_message(m.chat.id, 'Выберите город:', reply_markup=markup)
-# Получение сообщений от юзера
+
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
     if message.text.strip() == 'Нью-Йорк':
         bot.send_message(message.chat.id, 'Время в Нью-Йорке: ' + currentTimeInNewYork)
-    if message.text.strip() == 'Москва':
+    elif message.text.strip() == 'Москва':
         bot.send_message(message.chat.id, 'Время в Москве: ' + currentTimeInMoscow)
-    if message.text.strip() == 'Токио':
+    elif message.text.strip() == 'Токио':
         bot.send_message(message.chat.id, 'Время в Токио: ' + currentTimeInTokyo)
-# Запускаем бота
+    else:
+        bot.send_message(message.chat.id, 'Неизвестная команда')
+
 bot.polling(none_stop=True, interval=0)
