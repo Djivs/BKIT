@@ -42,11 +42,12 @@ def test_4():
     return [1, 2]
 
 
-# def main():
-#     print('!!!!!!!!')
-#     test_1()
-#     test_2()
-#     test_3()
-#     test_4()
+def main():
+    print('!!!!!!!!')
+    test_1()
+    test_2()
+    test_3()
+    test_4()
 
-# main()
+if __name__ == "__main__":
+    main()

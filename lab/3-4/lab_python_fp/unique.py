@@ -32,8 +32,9 @@ class Unique(object):
         pass
 
 
-# def main():
-#     for i in Unique(['a', 'A', 'b', 'B', 'a', 'A', 'b', 'B']):
-#         print(i)
+def main():
+    for i in Unique(['a', 'A', 'b', 'B', 'a', 'A', 'b', 'B']):
+        print(i)
 
-# main()
+if __name__ == "__main__":
+    main()

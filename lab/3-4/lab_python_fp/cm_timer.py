@@ -21,10 +21,11 @@ def cm_timer_2():
     finish = time()
     print("time: ", finish - start)
 
-# def main():
-#     with cm_timer_1():
-#         sleep(1.5)
-#     with cm_timer_2():
-#         sleep(2)
+def main():
+    with cm_timer_1():
+        sleep(1.5)
+    with cm_timer_2():
+        sleep(2)
 
-# main()
+if __name__ == "__main__":
+    main()

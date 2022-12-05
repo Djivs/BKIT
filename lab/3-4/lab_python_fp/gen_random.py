@@ -9,12 +9,13 @@ def gen_random(num_count, begin, end):
 gen1 = gen_random(1, 2, 3)
 gen2 = gen_random(3, 5, 25)
 
-# def main():
-#     for i in gen1:
-#         print(i, end=' ')
-#     print()
+def main():
+    for i in gen1:
+        print(i, end=' ')
+    print()
 
-#     for i in gen2:
-#         print(i, end=' ')
+    for i in gen2:
+        print(i, end=' ')
 
-# main()
+if __name__ == "__main__":
+    main()

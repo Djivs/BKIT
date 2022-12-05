@@ -17,23 +17,24 @@ def field(items, *args):
 
 
 
-# def main():
-#     goods = [
-#     {'title': 'Ковер', 'price': 2000, 'color': 'green'},
-#     {'title': 'Диван для отдыха', 'price': 5300, 'color': 'black'}
-#     ]
+def main():
+    goods = [
+    {'title': 'Ковер', 'price': 2000, 'color': 'green'},
+    {'title': 'Диван для отдыха', 'price': 5300, 'color': 'black'}
+    ]
 
-#     gen1 = field(goods, 'title') # должен выдавать 'Ковер', 'Диван для отдыха'
-#     gen2 = field(goods, 'title', 'price') # должен выдавать {'title': 'Ковер', 'price': 2000}, {'title': 'Диван для отдыха', 'price': 5300}
+    gen1 = field(goods, 'title') # должен выдавать 'Ковер', 'Диван для отдыха'
+    gen2 = field(goods, 'title', 'price') # должен выдавать {'title': 'Ковер', 'price': 2000}, {'title': 'Диван для отдыха', 'price': 5300}
 
-#     for i in gen1:
-#         print(i, end=' ')
-#     print()
+    for i in gen1:
+        print(i, end=' ')
+    print()
 
-#     for i in gen2:
-#         print(i, end=' ')
-#     print()
+    for i in gen2:
+        print(i, end=' ')
+    print()
 
-# main()
+if __name__ == "main":
+    main()
 
 

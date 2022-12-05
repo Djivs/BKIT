@@ -6,7 +6,7 @@ from lab_python_fp.cm_timer import cm_timer_1
 from lab_python_fp.unique import Unique
 from lab_python_fp.field import field
 
-path = 'lab/3-4/data_light.json'
+path = 'data_light.json'
 
 with open(path, encoding='utf-8') as f:
     data = json.load(f)
