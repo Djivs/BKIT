@@ -15,7 +15,6 @@ class Unique(object):
                 current = self.data[self.index]
                 self.occured.add(current)
                 return current
-        pass
 
     def __iter__(self):
         return self
@@ -29,7 +28,6 @@ class Unique(object):
                 return not(el in self.occured)
         else:
             return not(el in self.occured)
-        pass
 
 
 def main():

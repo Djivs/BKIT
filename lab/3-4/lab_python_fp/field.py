@@ -34,7 +34,7 @@ def main():
         print(i, end=' ')
     print()
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
 
 
